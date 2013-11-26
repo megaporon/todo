@@ -2,29 +2,40 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>ToDo</title>
+<title>テンプレート</title>
 <link rel="stylesheet" href="css/reset.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<form name="todo">
+
+
+<script id="input" type="text/x-handlebars-template">
+
+<li class="todo__list__item">{{todo}}
+	<input id="aaa" data-todo-num="" type="checkbox" class="js-todo-check" id="todo_check" value=""/>
+</li>
+
+
+</script>
+
+<form name="todo">
 		<div>
 			<input type="text" id="todo">
 			<input type="button" value="めも" id="todoPost">
 		</div>
-
-		<div id="todoArea"></div>
-
 		<div>
 			<input type="button" value="終わった" id="comp">
 			<input type="button" value="削除" id="del">
 		</div>
 	</form>
+<div id="todo-area">
+	<ul id="output" class="todo__list">
+	</ul>
+</div>
 
-	
-
-<!-- ここに書いた方が読み込み早い -->
-<script src="js/zepto.min.js"></script>
-<script src="js/script.js"></script>
+<!-- js -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="./js/handlebars-v1.1.2.js"></script>
+<script src="./js/script.js"></script>
 </body>
 </html>
